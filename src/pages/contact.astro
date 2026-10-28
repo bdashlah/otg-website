@@ -1,33 +1,100 @@
+
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 ---
 
 <PageLayout
-  title="Contact"
-  eyebrow="Say hello"
-  description="Letters, pitches, and corrections all welcome. We read everything."
+  title="Let's Create."
+  eyebrow="Bookings & Inquiries"
+  description="Your vision. Our lens."
 >
-  <div class="prose">
-    <p>
-      Email us at <a href="mailto:hello@example.com">hello@example.com</a>, or use the form below.
-      Replace the form action with your own endpoint (Formspree, Netlify Forms, etc.) before
-      deploying.
+  <section class="contact-section">
+    <p class="contact-intro">
+      More than a shoot. More than a moment.
     </p>
-  </div>
 
-  <form class="contact-form" action="mailto:hello@example.com" method="post" enctype="text/plain">
-    <label>
-      Name
-      <input type="text" name="name" required />
-    </label>
-    <label>
-      Email
-      <input type="email" name="email" required />
-    </label>
-    <label>
-      Message
-      <textarea name="message" required></textarea>
-    </label>
-    <button type="submit">Send</button>
-  </form>
+    <p class="contact-description">
+      Game day coverage, athlete portraits, creative shoots,
+      and everything in between.
+      Got something in mind? Let's make it happen.
+    </p>
+
+    <p class="contact-description">
+      Whether you're an athlete, a team, or a brand,
+      Off The Grid is ready to bring your vision to life.
+    </p>
+
+    <a
+      href="https://www.instagram.com/otg.us/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="instagram-button"
+    >
+      DM @OTG.US ON INSTAGRAM ↗
+    </a>
+
+    <p class="contact-footer">
+      ARIZONA BASED · EST. 2026
+    </p>
+  </section>
 </PageLayout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+
+  :global(h1) {
+    font-family: 'UnifrakturCook', serif !important;
+    font-size: clamp(3.5rem, 9vw, 6rem) !important;
+    color: #263f51;
+  }
+
+  .contact-section {
+    max-width: 680px;
+    padding: 25px 0 70px;
+    color: #263f51;
+  }
+
+  .contact-intro {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    margin-bottom: 25px;
+  }
+
+  .contact-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+  }
+
+  .instagram-button {
+    display: inline-block;
+    background: #263f51;
+    color: #ffffff;
+    padding: 20px 30px;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 30px 0;
+    transition: all 0.2s ease;
+  }
+
+  .instagram-button:hover {
+    background: #476c85;
+    transform: translateY(-3px);
+  }
+
+  .contact-footer {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin-top: 35px;
+  }
+
+  @media (max-width: 600px) {
+    .instagram-button {
+      width: 100%;
+      text-align: center;
+      padding: 18px 12px;
+      font-size: 0.85rem;
+    }
+  }
+</style>

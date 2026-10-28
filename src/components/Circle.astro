@@ -1,19 +1,23 @@
----
-interface Props {
-  title?: string;
-  subtitle?: string;
-  cta?: string;
-}
 
-const {
-  title = 'Leave Your Old Life Behind',
-  subtitle = "Don't try to be like someone else, be yourself. Be secure with yourself.",
-  cta = 'Explore',
-} = Astro.props;
+---
 ---
 
 <div class="circle">
-  <div class="circle-title">{title}</div>
-  <div class="circle-subtitle">{subtitle}</div>
-  <div class="circle-footer">{cta}</div>
+  <img src="/OTG.PNG" alt="OTG Logo" class="circle-logo" />
 </div>
+
+<style>
+  .circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+  .circle-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+</style>

@@ -1,24 +1,42 @@
+
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Menu from '../components/Menu.astro';
 import StickyHeader from '../components/StickyHeader.astro';
 import FeaturedArticle from '../components/FeaturedArticle.astro';
-import Sidebar from '../components/Sidebar.astro';
 
 const posts = await getCollection('posts', ({ data }) => data.featured);
-const featured = await getCollection('featured');
+
+posts.sort((a, b) => +b.data.date - +a.data.date);
 
 const pinned = posts[0];
-posts.sort((a, b) => +b.data.date - +a.data.date);
 ---
 
 <BaseLayout>
+  <!-- Moving text across the very top -->
+  <div class="otg-top-marquee" aria-label="Off The Grid sports culture community">
+    <div class="otg-top-marquee__track" aria-hidden="true">
+      <div class="otg-top-marquee__group">
+        {Array.from({ length: 4 }, () => (
+          <span>OFF THE GRID ✦ SPORTS • CULTURE • COMMUNITY ✦</span>
+        ))}
+      </div>
+
+      <div class="otg-top-marquee__group">
+        {Array.from({ length: 4 }, () => (
+          <span>OFF THE GRID ✦ SPORTS • CULTURE • COMMUNITY ✦</span>
+        ))}
+      </div>
+    </div>
+  </div>
+
   <div class="blog">
     <Menu />
+
     <StickyHeader
       title="Self"
-      pinnedLabel="Pinned Issue"
+      pinnedLabel="Latest Stories"
       pageNumber={pinned?.data.pageNumber ?? 'NO. 01'}
     />
 
@@ -39,7 +57,62 @@ posts.sort((a, b) => +b.data.date - +a.data.date);
         ))
       }
     </div>
-
-    <Sidebar entries={featured} />
   </div>
 </BaseLayout>
+
+<style>
+  .otg-top-marquee {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 38px;
+    background: #050b14;
+    color: #ffffff;
+    overflow: hidden;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  .otg-top-marquee__track {
+    display: flex;
+    width: max-content;
+    flex-shrink: 0;
+    animation: otg-marquee-scroll 30s linear infinite;
+  }
+
+  .otg-top-marquee__group {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  .otg-top-marquee__group span {
+    flex-shrink: 0;
+    font-size: 13px;this is good but we need the nav bar on the side to be lowered
+
+    font-weight: 700;
+    letter-spacing: 3px;
+    padding-right: 36px;
+  }
+
+  @keyframes otg-marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .otg-top-marquee__track {
+      animation: none;
+    }
+  }
+</style>
+

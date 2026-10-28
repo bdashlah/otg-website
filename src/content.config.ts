@@ -1,8 +1,12 @@
+
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 const posts = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/posts' }),
+  loader: glob({
+    pattern: '**/*.{md,mdx}',
+    base: './src/content/posts',
+  }),
   schema: z.object({
     title: z.string(),
     bigTitle: z.string(),
@@ -12,7 +16,10 @@ const posts = defineCollection({
     author: z.string(),
     readTime: z.string().default('5 Min Read'),
     date: z.coerce.date(),
-    cover: z.string().url(),
+
+    // Accept local images and external URLs
+    cover: z.string(),
+
     featured: z.boolean().default(false),
     pageNumber: z.string().optional(),
     tags: z.array(z.string()).default([]),
@@ -21,7 +28,10 @@ const posts = defineCollection({
 });
 
 const featured = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/featured' }),
+  loader: glob({
+    pattern: '**/*.md',
+    base: './src/content/featured',
+  }),
   schema: z.object({
     title: z.string(),
     subtitle: z.string(),
@@ -31,15 +41,25 @@ const featured = defineCollection({
 });
 
 const work = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/work' }),
+  loader: glob({
+    pattern: '**/*.md',
+    base: './src/content/work',
+  }),
   schema: z.object({
     title: z.string(),
     year: z.string(),
-    cover: z.string().url(),
+
+    // Accept local images and external URLs
+    cover: z.string(),
+
     summary: z.string(),
     url: z.string().url().optional(),
     order: z.number().default(0),
   }),
 });
 
-export const collections = { posts, featured, work };
+export const collections = {
+  posts,
+  featured,
+  work,
+};

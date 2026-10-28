@@ -1,18 +1,54 @@
+
 ---
 const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
   <div class="site-footer__inner">
-    <div class="site-footer__brand">Self <span>Esteem</span></div>
+
+    <a href="/" class="site-footer__brand">
+      Off The Grid
+    </a>
+
     <nav class="site-footer__nav" aria-label="Footer">
       <a href="/">Home</a>
+      <a href="/work">Gallery</a>
+      <a href="/studio">About Us</a>
       <a href="/blog">Blog</a>
-      <a href="/work">Work</a>
-      <a href="/studio">Studio</a>
       <a href="/contact">Contact</a>
-      <a href="/rss.xml">RSS</a>
+      <a
+        href="https://www.instagram.com/otg.us/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Instagram ↗
+      </a>
     </nav>
-    <div class="site-footer__meta">© {year} Self Esteem. A magazine template.</div>
+
+    <div class="site-footer__meta">
+      © {year} Off The Grid. All Rights Reserved.
+    </div>
+
   </div>
 </footer>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+
+  .site-footer__brand {
+    font-family: 'UnifrakturCook', serif !important;
+    font-size: 1.8rem !important;
+    font-weight: 700;
+    color: #263f51;
+    text-decoration: none;
+  }
+
+  .site-footer__brand:hover {
+    opacity: 0.75;
+  }
+
+  .site-footer__meta {
+    font-size: 0.8rem;
+    letter-spacing: 0.3px;
+  }
+</style>

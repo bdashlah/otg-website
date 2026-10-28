@@ -1,36 +1,146 @@
+
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 ---
 
 <PageLayout
-  title="The Studio"
-  eyebrow="About"
-  description="Self Esteem is a small editorial studio publishing essays on attention, motivation, and the work of being a person in 2026."
+  title="Off The Grid"
+  eyebrow="Est. 2026 — Arizona"
+  description="Independent sports media. Real stories. Different perspectives."
 >
-  <div class="prose">
-    <p>
-      We are a small, distributed group of writers and editors. We publish slowly — usually one
-      essay a month, occasionally a longer issue. We do not chase breaking news. We are interested
-      in what survives the silence after.
+  <div class="otg-studio">
+    <p class="intro">
+      More than media. More than the game.
     </p>
 
-    <h2>What we publish</h2>
-    <p>
-      Long-form essays, occasional interviews, and reading lists. Most issues sit on a single
-      question and turn it over for ten or twelve pages. Nothing is sponsored. Nothing is paywalled.
+    <p class="statement">
+      We're <strong>Off The Grid</strong> — an Arizona-based
+      creative collective built on a shared passion for sports,
+      storytelling, and the culture surrounding the game.
     </p>
 
-    <h2>People</h2>
-    <ul>
-      <li><strong>Richard Carnation</strong> — editor, essays on attention.</li>
-      <li><strong>Scarlett Witch</strong> — writer, mental health and care.</li>
-      <li><strong>Tom Hiddleston</strong> — writer, love and vulnerability.</li>
-    </ul>
-
-    <h2>Get in touch</h2>
     <p>
-      Reach us via the <a href="/contact">contact page</a>. We read everything and reply to most
-      things.
+      Established in 2026, OTG was created with one vision:
+      to shine a light on the athletes, moments, and stories
+      that deserve to be seen. From the biggest plays to
+      the moments nobody else catches, we're here to
+      capture it all.
     </p>
+
+    <h2>Beyond The Game.</h2>
+    <p>
+      We don't just cover sports. We capture the energy,
+      the emotion, and everything that makes the game
+      what it is. Through photography, sports media,
+      and creative storytelling, we're building a platform
+      that puts athletes and their stories first.
+    </p>
+
+    <p>
+      Our mission is simple: elevate others, celebrate
+      individuality, and give the next generation of
+      athletes a platform to be seen.
+    </p>
+
+    <h2>Behind The Lens.</h2>
+    <p>
+      <strong>Noah Augon</strong>
+    </p>
+    <p>
+      Part of the creative vision behind Off The Grid.
+      Driven by a passion for sports, creativity,
+      and capturing moments that matter.
+    </p>
+
+    <h2>Let's Create Something.</h2>
+    <p>
+      Got a game coming up? Need a photoshoot?
+      Have a story worth telling?
+    </p>
+
+    <p>
+      Whether you're an athlete, a team, or a brand,
+      we're always looking to create something different.
+      Consider Off The Grid for your next shoot.
+    </p>
+
+    <a
+      href="https://www.instagram.com/otg.us/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="instagram-link"
+    >
+      DM US ON INSTAGRAM ↗
+    </a>
+
+    <p class="closing">Stay Different. Stay Off The Grid.</p>
   </div>
 </PageLayout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+
+  /* Apply blackletter font to the main page title */
+  :global(.page-header h1),
+  :global(.page-title),
+  :global(main h1) {
+    font-family: 'UnifrakturCook', serif !important;
+  }
+
+  .otg-studio {
+    max-width: 760px;
+    padding: 15px 0 60px;
+    color: #263f51;
+  }
+
+  .intro {
+    font-size: clamp(1.4rem, 4vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.2;
+    margin-bottom: 25px;
+  }
+
+  .statement {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .otg-studio p {
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+
+  .otg-studio h2 {
+    font-family: 'UnifrakturCook', serif;
+    font-size: clamp(2.5rem, 7vw, 4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 45px 0 18px;
+    color: #263f51;
+  }
+
+  .instagram-link {
+    display: inline-block;
+    padding: 15px 25px;
+    margin: 15px 0 35px;
+    border: 2px solid #263f51;
+    color: #263f51;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+  }
+
+  .instagram-link:hover {
+    background: #263f51;
+    color: #d8eaf5;
+  }
+
+  .closing {
+    font-family: 'UnifrakturCook', serif;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    margin-top: 30px;
+  }
+</style>

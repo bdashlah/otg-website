@@ -1,3 +1,4 @@
+
 ---
 interface MenuItem {
   label: string;
@@ -15,15 +16,15 @@ interface Props {
 
 const {
   items = [
-    { label: 'Work', href: '/work' },
-    { label: 'Studio', href: '/studio' },
+    { label: 'Gallery', href: '/work' },
+    { label: 'About Us', href: '/studio' },
     { label: 'Blog', href: '/blog' },
     { label: 'Contact', href: '/contact' },
   ],
-  mention = '@MagazineDope',
-  mentionHref = '/',
-  subscribeLabel = 'Subscribe',
-  subscribeHref = '/contact',
+  mention = '@otg.us',
+  mentionHref = 'https://www.instagram.com/otg.us/',
+  subscribeLabel = 'Instagram ↗',
+  subscribeHref = 'https://www.instagram.com/otg.us/',
 } = Astro.props;
 ---
 
@@ -61,8 +62,24 @@ const {
       </a>
     ))
   }
-  <a href={mentionHref} class="blog-menu mention">{mention}</a>
-  <a href={subscribeHref} class="blog-menu subscribe">{subscribeLabel}</a>
+
+  <a
+    href={mentionHref}
+    class="blog-menu mention"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    {mention}
+  </a>
+
+  <a
+    href={subscribeHref}
+    class="blog-menu subscribe"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    {subscribeLabel}
+  </a>
 </div>
 
 <script>
@@ -71,6 +88,7 @@ const {
 
   const setOpen = (open: boolean) => {
     if (!toggle || !menu) return;
+
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     toggle.classList.toggle('is-open', open);
@@ -83,7 +101,9 @@ const {
     setOpen(open);
   });
 
-  menu?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+  menu?.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => setOpen(false))
+  );
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') setOpen(false);

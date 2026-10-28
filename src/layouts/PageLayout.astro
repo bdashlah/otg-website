@@ -1,3 +1,4 @@
+
 ---
 import BaseLayout from './BaseLayout.astro';
 import Footer from '../components/Footer.astro';
@@ -10,17 +11,32 @@ interface Props {
   pageTitle?: string;
 }
 
-const { title, description, eyebrow, heroImage, pageTitle } = Astro.props;
-const headTitle = pageTitle ?? `${title} — Self Esteem`;
+const {
+  title,
+  description,
+  eyebrow,
+  heroImage,
+  pageTitle
+} = Astro.props;
+
+const headTitle = pageTitle ?? `${title} — Off The Grid`;
 ---
 
-<BaseLayout title={headTitle} description={description} image={heroImage}>
+<BaseLayout
+  title={headTitle}
+  description={description}
+  image={heroImage}
+>
   <div class="page">
+
     <header class="page-nav">
-      <a class="page-nav__brand" href="/">Self <span>Esteem</span></a>
+      <a class="page-nav__brand" href="/">
+        Off The Grid
+      </a>
+
       <nav aria-label="Primary">
-        <a href="/work">Work</a>
-        <a href="/studio">Studio</a>
+        <a href="/work">Gallery</a>
+        <a href="/studio">About Us</a>
         <a href="/blog">Blog</a>
         <a href="/contact">Contact</a>
       </nav>
@@ -36,9 +52,15 @@ const headTitle = pageTitle ?? `${title} — Self Esteem`;
       }
 
       <section class="page-head">
-        {eyebrow && <div class="page-eyebrow">{eyebrow}</div>}
+        {eyebrow && (
+          <div class="page-eyebrow">{eyebrow}</div>
+        )}
+
         <h1 class="page-title">{title}</h1>
-        {description && <p class="page-deck">{description}</p>}
+
+        {description && (
+          <p class="page-deck">{description}</p>
+        )}
       </section>
 
       <div class="page-body">
@@ -49,3 +71,19 @@ const headTitle = pageTitle ?? `${title} — Self Esteem`;
     <Footer />
   </div>
 </BaseLayout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+
+  :global(.page-nav__brand) {
+    font-family: 'UnifrakturCook', serif !important;
+    font-size: 1.8rem !important;
+    font-weight: 700;
+    color: #ffffff !important;
+    text-decoration: none;
+  }
+
+  :global(.page-nav__brand:hover) {
+    opacity: 0.75;
+  }
+</style>

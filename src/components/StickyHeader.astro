@@ -1,3 +1,4 @@
+
 ---
 interface Props {
   title: string;
@@ -5,15 +6,69 @@ interface Props {
   pageNumber?: string;
 }
 
-const { title, pinnedLabel = 'Pinned Issue', pageNumber = 'NO. 01' } = Astro.props;
+const {
+  title,
+  pinnedLabel = 'Latest Stories',
+  pageNumber = 'NO. 01'
+} = Astro.props;
 ---
 
 <div class="blog-header blog-is-sticky">
   <div class="blog-article header-article">
     <div class="blog-big__title">{title}</div>
-    <div class="blog-menu rounded small-title">{pinnedLabel}</div>
+    <div class="blog-menu rounded small-title">
+      {pinnedLabel}
+    </div>
   </div>
+
   <div class="blog-article page-number">
     {pageNumber}
   </div>
 </div>
+
+<style>
+  .blog-header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .header-article {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+  }
+
+  .blog-big__title {
+    font-size: clamp(5rem, 10vw, 10rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.06em;
+    white-space: normal;
+    overflow-wrap: normal;
+  }
+
+  .blog-menu {
+    margin-top: 12px;
+  }
+
+  .page-number {
+    width: 100%;
+    text-align: right;
+    font-size: clamp(2rem, 4vw, 4rem);
+    padding: 12px 0;
+  }
+
+  @media (max-width: 768px) {
+    .blog-big__title {
+      font-size: clamp(4rem, 14vw, 7rem);
+    }
+
+    .page-number {
+      font-size: 2rem;
+    }
+  }
+</style>
