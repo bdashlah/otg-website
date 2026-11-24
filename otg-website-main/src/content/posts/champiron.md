@@ -1,7 +1,7 @@
 
 ---
 title: 'Ironwood Ridge Volleyball Wins Program’s First-Ever State Championship in Southern Arizona Showdown'
-bigTitle: 'STATE CHAMPIONS IRONWOOD'
+bigTitle: 'STATE CHAMPS'
 emphasis: 'Ironwood Ridge'
 headline: '{emphasis} Makes History With First State Championship'
 excerpt: 'Led by Ashlyn Quiri, Kallie George, and Marcella Landers, Ironwood Ridge defeated Mica Mountain 3-1 to capture its first-ever 4A volleyball state championship and finish the season on a 19-game winning streak.'
