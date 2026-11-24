@@ -8,7 +8,7 @@ excerpt: 'Following a 21-2 season, Sunnyside Boys Soccer enters the 2026-27 camp
 author: 'Jose Vega'
 readTime: '4 Min Read'
 date: 2026-11-10
-cover: '/OTG.PNG'
+cover: '/images/SS BOYS SOCCER.jpg'
 featured: true
 tags: ['soccer', 'sunnyside', 'boys-soccer', 'high-school-sports', 'southern-arizona']
 ---
