@@ -1,0 +1,19 @@
+
+---
+interface Props {
+  items?: string[];
+}
+
+const {
+  items = [
+    'OFF THE GRID • EST. 2026 • ARIZONA',
+    'MORE THAN MEDIA • MORE THAN THE GAME',
+    'EVERY ATHLETE HAS A STORY • WE MAKE SURE IT IS SEEN',
+    'BUILT DIFFERENT • STAY OFF THE GRID',
+  ],
+} = Astro.props;
+---
+
+<marquee width="100%" direction="left">
+  {items.map((text) => <span>{text} &nbsp; ✦ &nbsp; </span>)}
+</marquee>
