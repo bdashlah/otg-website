@@ -8,8 +8,8 @@ excerpt: 'Led by Ashlyn Quiri, Kallie George, and Marcella Landers, Ironwood Rid
 author: 'Jose Vega'
 readTime: '4 Min Read'
 date: 2026-11-14
-cover: '/OTG.PNG'
-featured: true
+cover: '/images/ironridge.jpg'
+0featured: true
 tags: ['volleyball', 'ironwood-ridge', 'high-school-sports', '4a-state-championship', 'southern-arizona']
 ---
 
